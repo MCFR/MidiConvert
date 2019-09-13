@@ -35,6 +35,7 @@ export interface Track {
 	channel(id),
 	scale(amount): Track,
 	slice(startTime, endTime): Track,
+	removeNote(noteId): Track,
 	encode (trackEncoder, header),
 
 	toJSON(): Object
@@ -73,6 +74,7 @@ export interface MIDI {
 	track(): Track,
 	get(trackName): Track,
 	slice(startTime, endTime): MIDI
+	removeTrack(trackId): MIDI
 }
 
 export function parse(raw: ArrayBuffer|string): MIDI;

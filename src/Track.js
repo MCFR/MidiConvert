@@ -276,6 +276,16 @@ class Track {
 	}
 
 	/**
+	 * Remove a Note in notes following its id
+	 * @param {Number} noteId 
+	 * @returns {Track}
+	 */
+	removeNote(noteId){
+		this.notes.splice(noteId, 1)
+		return this
+	}
+
+	/**
 	 * Write the output to the stream
 	 */
 	encode (trackEncoder, header) {

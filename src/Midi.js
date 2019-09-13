@@ -235,6 +235,16 @@ class Midi {
 	}
 
 	/**
+	 * Remove a Note in notes following its id
+	 * @param {Number} noteId 
+	 * @returns {Track}
+	 */
+	removeTrack(trackId){
+		this.tracks.splice(trackId, 1)
+		return this
+	}
+
+	/**
 	 * the time of the first event
 	 * @type {Number}
 	 */
