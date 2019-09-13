@@ -4,6 +4,12 @@ export interface Note {
 	midi: number,
 	velocity: number,
 	duration: number,
+
+	fromJSON(json):Note,
+
+	match(note): boolean,
+
+	toJSON(): Object
 }
 
 export interface Track {
@@ -18,6 +24,20 @@ export interface Track {
 	startTime: number,
 	duration: number,
 	length: number,
+
+	fromJSON(json): Track,
+
+	note(midi, time, duration, velocity): Note,
+	noteOn(midi, time, velocity): Track,
+	noteOff(midi, time): Track,
+	cc(num, time, value): Track,
+	patch(id),
+	channel(id),
+	scale(amount): Track,
+	slice(startTime, endTime): Track,
+	encode (trackEncoder, header),
+
+	toJSON(): Object
 }
 
 export interface ControlChange {
@@ -44,9 +64,15 @@ export interface MIDI {
 		[key: number]: ControlChange
 	},
 
-	toJSON(): MIDI,
-	encode(): string,
-  toArray(): Uint8Array,
+	fromJSON(json): MIDI,
+	load(url, data, method),
+	decode(bytes): MIDI,
+	encode(): String,
+	toArray(): Uint8Array,
+	toJSON(): Object,
+	track(): Track,
+	get(trackName): Track,
+	slice(startTime, endTime): MIDI
 }
 
 export function parse(raw: ArrayBuffer|string): MIDI;
