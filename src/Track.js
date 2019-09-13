@@ -194,14 +194,6 @@ class Track {
 	}
 
 	/**
-	 * Set the time of the first event in seconds
-	 * @type {Number}
-	 */
-	set startTime(value) {
-		this.startTime = value
-	}
-
-	/**
 	 * The time of the last event in seconds
 	 * @type {Number}
 	 */
@@ -212,14 +204,6 @@ class Track {
 		} else {
 			return 0
 		}
-	}
-
-	/**
-	 * Set the time of the last event in seconds
-	 * @type {Number}
-	 */
-	set duration(value) {
-		this.duration = value
 	}
 
 	/**
