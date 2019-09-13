@@ -27,7 +27,6 @@ class Control{
 	/**
 	 * The common name of the control change event
 	 * @type {String}
-	 * @readOnly
 	 */
 	get name(){
 		if (channelNames.hasOwnProperty(this.number)){

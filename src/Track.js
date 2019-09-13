@@ -140,7 +140,7 @@ class Track {
 	/**
 	 * An array of all the note on events
 	 * @type {Array<Object>}
-	 * @readOnly
+
 	 */
 	get noteOns(){
 		const noteOns = []
@@ -158,7 +158,7 @@ class Track {
 	/**
 	 * An array of all the noteOff events
 	 * @type {Array<Object>}
-	 * @readOnly
+
 	 */
 	get noteOffs(){
 		const noteOffs = []
@@ -236,7 +236,6 @@ class Track {
 	/**
 	 * The family that the instrument belongs to
 	 * @type {String}
-	 * @readOnly
 	 */
 	get instrumentFamily() {
 		if (this.isPercussion){
