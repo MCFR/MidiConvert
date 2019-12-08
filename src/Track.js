@@ -186,7 +186,7 @@ class Track {
 	 */
 	get startTime() {
 		if (this.notes.length){
-			let firstNote = this.notes[0]
+			let firstNote = this.notes.sort((a,b) => a.time-b.time)[0]
 			return firstNote.noteOn
 		} else {
 			return 0
@@ -199,7 +199,7 @@ class Track {
 	 */
 	get duration() {
 		if (this.notes.length){
-			let lastNote = this.notes[this.notes.length - 1]
+			let lastNote = this.notes.sort((a,b) => a.time-b.time)[this.notes.length - 1]
 			return lastNote.noteOff
 		} else {
 			return 0
