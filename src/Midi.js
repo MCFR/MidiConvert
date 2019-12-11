@@ -243,6 +243,16 @@ class Midi {
 		this.tracks.splice(trackId, 1)
 		return this
 	}
+	
+	/**
+	 * Add a track at start
+	 * @returns {Track}
+	 */
+	addTrackAtStart(name){
+		const track = new Track(name)
+		this.tracks.unshift(track)
+		return track
+	}
 
 	/**
 	 * the time of the first event

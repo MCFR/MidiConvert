@@ -75,6 +75,8 @@ export interface MIDI {
 	get(trackName): Track,
 	slice(startTime, endTime): MIDI
 	removeTrack(trackId): MIDI
+	addTrackAtStart(name): Track
+
 }
 
 export function parse(raw: ArrayBuffer|string): MIDI;
