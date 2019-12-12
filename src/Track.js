@@ -211,19 +211,8 @@ class Track {
 	 * @type {String}
 	 */
 	get instrument() {
-		if (this.isPercussion){
-			return drumKitByPatchID[this.instrumentNumber]
-		} else {
-			return instrumentByPatchID[this.instrumentNumber]
-		}
+		return instrumentByPatchID[this.instrumentNumber]
 	}
-	set instrument(inst) {
-		const index = instrumentByPatchID.indexOf(inst)
-		if (index !== -1){
-			this.instrumentNumber = index
-		}
-	}
-
 
 	/**
 	 * Whether or not this is a percussion track
@@ -233,11 +222,9 @@ class Track {
 		return [0x9, 0xA].includes(this.channelNumber)
 	}
 	
-	
-	set isPercussion(bool) {
+	percussion() {
 		this.isPercussion = bool
 	}
-
 	/**
 	 * The family that the instrument belongs to
 	 * @type {String}
