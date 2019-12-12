@@ -214,6 +214,14 @@ class Track {
 		return instrumentByPatchID[this.instrumentNumber]
 	}
 
+	set instrument(inst) {
+		const index = instrumentByPatchID.indexOf(inst)
+		if (index !== -1){
+			this.instrumentNumber = index
+		}
+	}
+
+
 	/**
 	 * Whether or not this is a percussion track
 	 * @type {Boolean}
