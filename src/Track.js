@@ -232,6 +232,11 @@ class Track {
 	get isPercussion() {
 		return [0x9, 0xA].includes(this.channelNumber)
 	}
+	
+	
+	set isPercussion(bool) {
+		this.isPercussion = bool
+	}
 
 	/**
 	 * The family that the instrument belongs to
